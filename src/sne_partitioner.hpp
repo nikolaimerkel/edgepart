@@ -46,7 +46,7 @@ class SnePartitioner : public Partitioner
     std::vector<vid_t> degrees;
     std::vector<int8_t> master;
     std::vector<dense_bitset> is_cores, is_boundarys;
-    std::vector<int8_t> results;
+    std::vector<int32_t> results;
 
     std::random_device rd;
     std::mt19937 gen;
