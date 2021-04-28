@@ -271,4 +271,22 @@ void SnePartitioner::split()
 
     total_time.stop();
     LOG(INFO) << "total partition time: " << total_time.get_time();
+
+
+
+    std::ofstream metric_file;
+    auto graph_name = basefilename;
+    auto num_partitions = p;
+    auto partitioner_name = "SNE";
+    auto metric_file_name = graph_name + "_" + partitioner_name + "-" + std::to_string(num_partitions) + ".metrics";
+
+    metric_file.open(metric_file_name);
+    metric_file << "graph: " << graph_name << std::endl;
+    metric_file << "partitioner: " << partitioner_name << std::endl;
+    metric_file << "replication_factor: " << (double)total_mirrors / num_vertices  << std::endl;
+    metric_file << "num_partitions: " << num_partitions << std::endl;
+    metric_file.close();
+
+
+
 }
