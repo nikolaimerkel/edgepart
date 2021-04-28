@@ -83,7 +83,9 @@ class SnePartitioner : public Partitioner
 
     void assign_edge(int bucket, vid_t from, vid_t to)
     {
-        writer.save_edge(from, to, bucket);
+        if (FLAGS_write_parts) {
+            writer.save_edge(from, to, bucket);
+        }
         assigned_edges++;
         occupied[bucket]++;
         degrees[from]--;

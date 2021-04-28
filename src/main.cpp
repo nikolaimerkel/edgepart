@@ -19,6 +19,7 @@ DEFINE_bool(inmem, false, "in-memory mode");
 DEFINE_double(sample_ratio, 2, "the sample size divided by num_vertices");
 DEFINE_string(method, "sne",
               "partition method: ne, sne, random, and dbh");
+DEFINE_bool(write_parts, false, "Write out partitioned edgelist");
 
 int main(int argc, char *argv[])
 {

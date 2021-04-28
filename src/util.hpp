@@ -19,6 +19,8 @@ DECLARE_string(filename);
 DECLARE_string(filetype);
 DECLARE_bool(inmem);
 DECLARE_double(sample_ratio);
+DECLARE_bool(write_parts);
+
 
 typedef uint32_t vid_t;
 const vid_t INVALID_VID = -1;
